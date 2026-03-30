@@ -1,0 +1,93 @@
+    1  ip addr show enp0s3
+    2  ip route show
+    3  ip addr add 192.168.1.100/24 dev enp0s3
+    4  ip link set enp0s3 up
+    5  ip route add default via 192.168.1.1
+    6  echo "nameserver 8.8.8.8" > /etc/resolv.conf
+    7  ip addr show enp0s3
+    8  ip rote show
+    9  ip route show
+   10  ping -c 4 192.168.1.1
+   11  ip route del default
+   12  ip route add default via 192.168.0.1
+   13  ip addr del 192.168.1.100/24 dev enp0s3
+   14  ip addr add 192.168.0.100/24 dev enp0s3
+   15  ip addr show enp0s3
+   16  ip route add default via 192.168.0.1
+   17  ip route show
+   18  ping -c 4 192.168.0.1
+   19  ping -c 4 8.8.8.8
+   20  ip addr show enp0s3
+   21  hostname
+   22  rpm -qa | grep -E "nginx|tcpdump|libcap"
+   23  lsblk
+   24  df -h/data/mephi-web
+   25  df -h /data/mephi-web
+   26  poweroff
+   27  lsblk
+   28  poweroff
+   29  lsblk
+   30  fdisk /dev/sdb
+   31  lsblk
+   32  mkfs.ext4 -L MEPHI_DATA /dev/sdb1
+   33  mkdir -p /data/mephi-web
+   34  echo "LABEL=MEPHI_DATA /data/mephi-web ext4 defaults 0 2" >> /etc/fstab
+   35  mount -a
+   36  df -h /data/mephi-web
+   37  lsblk
+   38  systemctl enable nginx --now
+   39  dnf install -y nginx
+   40  systemctl enable nginx --now
+   41  dnf install -y nginx tcpdump libcap-ng-utils
+   42  cd /tmp
+   43  dnf download tcpdump
+   44  rpm -ivh --replacepkgs tcpdump-*.rpm
+   45  useradd mephi-admin
+   46  systemctl status nginx
+   47  journalctl -u nginx --since "5 min" > /tpm/nginx_recent_logs.txt
+   48  journalist -u nginx --sincejournalctl -u nginx --since "5 min" > /tmp/nginx_recent_logs.txt
+   49  journalctl -u nginx --since "5 min" > /tmp/nginx_recent_logs.txt
+   50  journalctl -u nginx --since "5 minutes ago" > /tmp/nginx_recent_logs.txt
+   51  cat /tmp/nginx_recent_logs.txt
+   52  useradd mephi-admin
+   53  echo "P@ssw0rd2026" | passwd --stdin mephi-admin
+   54  groupadd mephi-devs
+   55  usermod -aG mephi-devs mephi-admin
+   56  chown -R mephi-admin:mephi-devs /data/mephi-web
+   57  chmod 2775 /data/mephi-web
+   58  ls -ld/data/mephi-web
+   59  ls -ld /data/mephi-web
+   60  getenforce
+   61  setenforce 1
+   62  dnf install -y policycoreutils-python-utils
+   63  semanage fcontext -a -t httpd_sys_content_t "/data/mephi-web(/.*)?"
+   64  restorcon -Rv /data/mephi-web
+   65  restorecon -Rv /data/mephi-web
+   66  ls -Z /data/mephi-web
+   67  chmod u-s /usr/sbin/tcpdump
+   68  setcap cap_net_raw,cap_net_admin+ep /usr/sbin/tcpdump
+   69  getcap /usr/sbin/tcpdump --help
+   70  getcap /usr/sbin/tcpdump
+   71  sudo -u mephi-admin tcpdump --help
+   72  su - mephi-admin
+   73  usermod -aG wheel mephi-admin
+   74  id mephi-admin
+   75  echo "Hello from Student: 255959" > /data/mephi-web/index.html
+   76  chown mephi-admin:mephi-devs /data/mephi-web/index.html
+   77  ls -la /data/mephi-web/
+   78  systemctl start nginx
+   79  systemctl enable nginx
+   80  systemctl status nginx
+   81  curl http://localhost
+   82  nano /etc/nginx/nginx.conf
+   83  nginx -t
+   84  systemctl restart nginx
+   85  curl http://localhost
+   86  echo "root" > /etc/ssh/denied_users
+   87  sed -i '1i auth required pam_listfile.so onerr=fail item=user sense=deny file=/etc/ssh/denied_users' /etc/pam.d/system_auth
+   88   sed -i '1i auth required pam_listfile.so onerr=fail item=user sense=deny file=/etc/ssh/denied_users' /etc/pam.d/system-auth
+   89  echo "PermitRootLogin no" >> /etc/ssh/sshd_config
+   90  systemctl restart sshd
+   91  cd /root
+   92  histiry > project_history.txt
+   93  history > project_history.txt
